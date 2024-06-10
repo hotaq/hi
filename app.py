@@ -91,7 +91,7 @@ confidence = float(st.sidebar.slider(
 
 
 if model_type:
-    model_path = Path('C:/Users/ADMINS/Downloads/AI_builder-main/AI_builder-main/models/yolov8.pt')
+    model_path = Path('yolov8.pt')
 else:
     st.error("Please Select Model in Sidebar")
 
