@@ -56,7 +56,7 @@ st.set_page_config(
 st.title("object detection for detect any phase in mitosis cell")
 
 # sidebar
-st.sidebar.header("DL Model Config")
+st.sidebar.header("Model Config")
 
 # model options
 task_type = st.sidebar.selectbox(
@@ -86,7 +86,7 @@ else:
 try:
     model = load_model(model_path)
 except Exception as e:
-    st.error(f"Unable to load model. Please check the specified path: C:/Users/ADMINS/Downloads/AI_builder-main/AI_builder-main/models/yolov8.pt")
+    st.error(f"Unable to load model. Please check the specified path: yolov8.pt")
 
 # image/video options
 st.sidebar.header("Image/Video Config")
