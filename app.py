@@ -3,25 +3,13 @@ import streamlit as st
 from ultralytics import YOLO
 from PIL import Image
 def load_model(model_path):
-    """
-    Loads a YOLO object detection model from the specified model_path.
-
-    Parameters:
-        model_path (str): The path to the YOLO model file.
-
-    Returns:
-        A YOLO object detection model.
-    """
+   
     model = YOLO(model_path)
     return model
 
 def infer_uploaded_image(conf, model):
-    """
-    Execute inference for uploaded image
-    :param conf: Confidence of YOLOv8 model
-    :param model: An instance of the `YOLOv8` class containing the YOLOv8 model.
-    :return: None
-    """
+   
+   
     source_img = st.sidebar.file_uploader(
         label="Choose an image...",
         type=("jpg", "jpeg", "png", 'bmp', 'webp')
@@ -32,7 +20,6 @@ def infer_uploaded_image(conf, model):
     with col1:
         if source_img:
             uploaded_image = Image.open(source_img)
-            # adding the uploaded image to the page with caption
             st.image(
                 image=source_img,
                 caption="Uploaded Image",
@@ -59,14 +46,14 @@ def infer_uploaded_image(conf, model):
                         st.write(ex)
 
 st.set_page_config(
-    page_title="Interactive Interface for YOLOv8",
-    page_icon="🤖",
+    page_title="object detection for detect any phase in mitosis cell",
+    page_icon="🦠",
     layout="wide",
     initial_sidebar_state="expanded"
     )
 
 # main page heading
-st.title("Interactive Interface for YOLOv8")
+st.title("object detection for detect any phase in mitosis cell")
 
 # sidebar
 st.sidebar.header("DL Model Config")
